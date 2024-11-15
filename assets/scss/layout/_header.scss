@@ -1,0 +1,63 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as var;
+
+header {
+    @include mixins.flex ($justify: space-between);
+    width: 100%;
+
+    img {
+        height: 128px;
+        width: 128px;
+    }
+    nav {
+        @include mixins.flex ($justify: flex-end);
+        margin-right: 2rem;
+        &>:first-child {
+            padding-left: 2rem;
+            border-radius: 50px 50px 50px 50px;
+        }
+        &>:last-child {
+            padding: 0 2rem;
+
+            >li {
+                padding: 2rem
+            }
+        }
+
+        ul {
+            @include mixins.flex();
+            background-color: var.$primarycolor;
+            text-align: center;
+
+            li {
+                padding: 1rem;
+                position: relative;
+
+                a , span{
+                    display: block;
+                    color: var.$secondarycolor;
+                    font-size: 48px;
+                    cursor: pointer;
+
+                    @include mixins.hover ();
+                }
+                ul {
+                    @include mixins.flex(column);
+                    display: none;
+                    position: absolute;
+                    top: 110px;
+                    left : calc(-2rem + -5px);
+                    border-radius: 0 0 50px 50px;
+
+                    li {
+                        padding: 1rem 4rem
+                    }
+
+                    &:last-child {
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

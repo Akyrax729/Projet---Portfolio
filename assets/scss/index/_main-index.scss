@@ -1,0 +1,22 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as var;
+
+main {
+    #presentation {
+        @include mixins.flex (column);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 2rem;
+        margin: 0 20%;
+        border-radius: 20px;
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 1rem;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+    }
+}

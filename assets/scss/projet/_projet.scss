@@ -1,0 +1,58 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as var;
+
+main {
+    height: 100%;
+    width: 100%;
+    #projet {
+        @include mixins.flex(column);
+
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        margin: 0 1rem;
+        padding: 1rem;
+        color: white;
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        >div {
+        @include mixins.flex($justify: space-around);
+
+            >div:last-child {
+                width: 20%;
+                background-color: var.$primarycolor;
+                border-radius: 20px;
+                padding: 1rem;
+
+                h3 {
+                    font-size: 30px;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: 20px;
+                    text-align: justify;
+                }
+            }
+        }
+    
+        .image {
+            width: 70%;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #leresto {
+    
+            background-image: url(../img/leresto.png);
+        }
+        #gamingcampus {
+            background-image: url(../img/gamingcampus.png);
+        }
+        #arclabs {
+            background-image: url(../img/arclabs.png);
+        }
+    }
+}
