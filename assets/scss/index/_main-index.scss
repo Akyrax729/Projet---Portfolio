@@ -15,8 +15,21 @@ main {
             margin-bottom: 1rem;
         }
         p {
-            text-align: justify;
+            text-align: center;
             font-size: 20px;
+            margin-top: 0.5rem;
+        }
+        a {
+            font-size: 20px;
+            margin-top: 1rem;
+            color: var.$secondarycolor;
+        }
+    }
+}
+@media screen and (max-width:820px) {
+    main {
+        #presentation {
+            margin: 0 1rem;
         }
     }
 }

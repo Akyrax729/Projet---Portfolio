@@ -12,13 +12,10 @@
 body {
     background-image: url(../img/Space-purple-galaxy-stars.jpg);
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
     font-family: "roboto";
     @include mixins.flex(column,space-between);
-    overflow: hidden;
 }
 h1, h2, h3, ul span, a {
     font-family: "pixelify";

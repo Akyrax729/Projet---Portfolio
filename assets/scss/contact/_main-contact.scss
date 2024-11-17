@@ -13,35 +13,63 @@ main {
         padding: 2rem;
         padding-top: 0;
 
-        form {
-            @include mixins.flex (column);
-            text-align: center;
+        #formulaire {
+            @include mixins.flex (column);   
+            text-align: center;     
 
             label {
                 color: var.$secondarycolor;
                 font-family: "pixelify";
                 font-size: 30px;
-                margin-top: 2rem;
+                margin-top: 1rem;
                 margin-bottom: 1rem;
             }
             input {
+                font-family: "roboto";
                 font-size: 20px;
-                width: 300px;
+                width: 17rem;;
+                padding: 0 0.5rem;
+            }
+            >div {
+                @include mixins.flex();
 
-                &::placeholder {
-                    padding-left: 1rem;
+                div {
+                    @include mixins.flex(column);
+                    margin: 0 0.5rem;
+
+                    input {
+                        width: 7.4rem;
+                    }
                 }
+                
             }
             textarea {
                 resize: none;
+                font-family: "roboto";
                 font-size: 20px;
-                width: 300px;
+                width: 17rem;
                 height: 200px;
+                padding: 0 0.5rem;
+            }
+            .btn {
+                background-color: var.$primarycolor;
+                color: var.$secondarycolor;
+                font-size: 24px;
+                border: none;
+                border-radius: 20px;
+                padding: 1rem;
+                margin-top: 1.5rem;
                 
-                &::placeholder {
-                    padding-left: 1rem;
+                &:hover {
+                    @include mixins.hover();
+                    cursor: pointer;
                 }
-                
+            }
+            .error {
+                @include mixins.flex(column);
+                color: red;
+                font-size: 13px;
+                margin-top: 1rem;
             }
         }
     }

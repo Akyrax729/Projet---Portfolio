@@ -33,16 +33,24 @@ main {
                 p {
                     font-size: 20px;
                     text-align: justify;
+
+                    a {
+                        display: block;
+                        text-align: center;
+                        margin-top: 1rem;
+                        color: var.$secondarycolor;
+                        @include mixins.hover();
+                    }
                 }
             }
         }
     
         .image {
             width: 70%;
-            height: 500px;
+            height: 400px;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
         }
         #leresto {
     
@@ -53,6 +61,37 @@ main {
         }
         #arclabs {
             background-image: url(../img/arclabs.png);
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    main {
+        #projet {
+            >div {
+                @include mixins.flex(column);
+
+                >div:last-child {
+                    margin-top: 1rem;
+                    width: auto;
+                }
+                .image {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    main {
+        #projet {
+            >div {
+                .image {
+                    height: 200px;
+                }
+            }
         }
     }
 }
